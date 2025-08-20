@@ -1,0 +1,255 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* KnowGrow Design System - Learning & Growth Theme
+All colors MUST be HSL for consistency and theme switching.
+*/
+
+@layer base {
+  :root {
+    /* Base Colors - Clean and modern */
+    --background: 0 0% 100%;
+    --foreground: 225 15% 15%;
+
+    /* Card & Surface Colors */
+    --card: 0 0% 100%;
+    --card-foreground: 225 15% 15%;
+    --glass: 0 0% 100% / 0.1;
+
+    /* Popover Colors */
+    --popover: 0 0% 100%;
+    --popover-foreground: 225 15% 15%;
+
+    /* Primary - Purple to Blue Learning Gradient */
+    --primary: 258 90% 66%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 258 100% 85%;
+    --primary-glow: 258 90% 66% / 0.3;
+
+    /* Secondary - Soft Learning Tones */
+    --secondary: 250 100% 97%;
+    --secondary-foreground: 258 25% 25%;
+
+    /* Growth Colors */
+    --growth: 142 76% 36%;
+    --growth-foreground: 0 0% 100%;
+    --growth-light: 142 76% 85%;
+
+    /* Accent - Bright Interactive Blue */
+    --accent: 217 91% 60%;
+    --accent-foreground: 0 0% 100%;
+    --accent-light: 217 91% 85%;
+
+    /* Muted */
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 8.9% 46.1%;
+
+    /* Destructive */
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Borders & Inputs */
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 258 90% 66%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(258 90% 66%), hsl(217 91% 60%));
+    --gradient-hero: linear-gradient(135deg, hsl(258 90% 66%), hsl(217 91% 60%), hsl(142 76% 36%));
+    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 100%), hsl(250 100% 97%));
+    --gradient-glass: linear-gradient(135deg, hsl(0 0% 100% / 0.1), hsl(0 0% 100% / 0.05));
+
+    /* Shadows */
+    --shadow-elegant: 0 10px 30px -10px hsl(258 90% 66% / 0.3);
+    --shadow-glow: 0 0 40px hsl(258 90% 66% / 0.4);
+    --shadow-soft: 0 2px 10px hsl(0 0% 0% / 0.05);
+
+    /* Animations & Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark theme with learning aesthetics */
+    --background: 225 25% 8%;
+    --foreground: 0 0% 95%;
+    --glass: 0 0% 0% / 0.1;
+
+    --card: 225 25% 10%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 225 25% 10%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 258 90% 66%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 258 90% 45%;
+    --primary-glow: 258 90% 66% / 0.4;
+
+    --secondary: 225 25% 15%;
+    --secondary-foreground: 0 0% 95%;
+
+    --growth: 142 76% 36%;
+    --growth-foreground: 0 0% 100%;
+    --growth-light: 142 76% 25%;
+
+    --accent: 217 91% 60%;
+    --accent-foreground: 0 0% 100%;
+    --accent-light: 217 91% 45%;
+
+    --muted: 225 15% 20%;
+    --muted-foreground: 225 8% 65%;
+
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 225 15% 25%;
+    --input: 225 15% 25%;
+    --ring: 258 90% 66%;
+
+    /* Dark mode gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(258 90% 66%), hsl(217 91% 60%));
+    --gradient-hero: linear-gradient(135deg, hsl(258 90% 66%), hsl(217 91% 60%), hsl(142 76% 36%));
+    --gradient-subtle: linear-gradient(180deg, hsl(225 25% 8%), hsl(225 25% 12%));
+    --gradient-glass: linear-gradient(135deg, hsl(0 0% 100% / 0.05), hsl(0 0% 100% / 0.02));
+
+    /* Dark shadows */
+    --shadow-elegant: 0 10px 30px -10px hsl(0 0% 0% / 0.5);
+    --shadow-glow: 0 0 40px hsl(258 90% 66% / 0.3);
+    --shadow-soft: 0 2px 10px hsl(0 0% 0% / 0.3);
+
+    --sidebar-background: 225 25% 10%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 258 90% 66%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 225 25% 15%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 225 15% 25%;
+    --sidebar-ring: 258 90% 66%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer components {
+  /* Glass morphism effects */
+  .glass {
+    @apply bg-white/10 backdrop-blur-md border border-white/20;
+  }
+  
+  .glass-card {
+    @apply bg-white/5 backdrop-blur-xl border border-white/10 rounded-xl;
+  }
+
+  /* Hero gradient backgrounds */
+  .bg-gradient-hero {
+    background: var(--gradient-hero);
+  }
+  
+  .bg-gradient-primary {
+    background: var(--gradient-primary);
+  }
+  
+  .bg-gradient-subtle {
+    background: var(--gradient-subtle);
+  }
+
+  /* Interactive elements */
+  .interactive-glow {
+    @apply transition-all duration-300 hover:shadow-[0_0_40px_hsl(var(--primary-glow))];
+  }
+  
+  .interactive-lift {
+    @apply transition-transform duration-300 hover:-translate-y-1 hover:shadow-xl;
+  }
+  
+  .interactive-scale {
+    @apply transition-transform duration-200 hover:scale-105 active:scale-95;
+  }
+
+  /* Loading animations */
+  .pulse-glow {
+    animation: pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
+  .animate-glow-pulse {
+    animation: glow-pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
+  @keyframes pulse-glow {
+    0%, 100% {
+      opacity: 1;
+      box-shadow: 0 0 20px hsl(var(--primary) / 0.3);
+    }
+    50% {
+      opacity: 0.8;
+      box-shadow: 0 0 40px hsl(var(--primary) / 0.6);
+    }
+  }
+
+  @keyframes glow-pulse {
+    0%, 100% {
+      filter: drop-shadow(0 0 20px hsl(var(--primary) / 0.3));
+    }
+    50% {
+      filter: drop-shadow(0 0 40px hsl(var(--primary) / 0.6));
+    }
+  }
+
+  /* Enhanced loading states */
+  .loading-shimmer {
+    background: linear-gradient(
+      90deg,
+      transparent,
+      hsl(var(--primary) / 0.1),
+      transparent
+    );
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite;
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+
+  /* Text gradients */
+  .text-gradient {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
