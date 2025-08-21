@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git + GitHub CLI Crash Course</title>
+    <!-- Tailwind CSS CDN for modern styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f3f4f6; /* Light gray background */
+            color: #333;
+        }
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            font-weight: bold;
+            color: #4338ca; /* Indigo 700 */
+        }
+        h1 {
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        h2 {
+            font-size: 2rem;
+            border-bottom: 2px solid #e0e7ff; /* Indigo 100 */
+            padding-bottom: 0.5rem;
+            margin-top: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+        h3 {
+            font-size: 1.5rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: #4f46e5; /* Indigo 600 */
+        }
+        pre {
+            background-color: #1f2937; /* Darker gray for code blocks */
+            color: #e5e7eb; /* Light gray text */
+            padding: 1rem;
+            border-radius: 8px;
+            overflow-x: auto; /* Enable horizontal scrolling for long lines */
+            font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+            font-size: 0.9rem;
+            line-height: 1.4;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+        pre code {
+            display: block;
+        }
+        pre .comment {
+            color: #6b7280; /* Gray for comments */
+        }
+        .section-separator {
+            border: none;
+            border-top: 1px dashed #d1d5db; /* Light gray dashed line */
+            margin: 3rem 0;
+        }
+        .callout {
+            background-color: #e0f2fe; /* Light blue */
+            border-left: 5px solid #38bdf8; /* Blue border */
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            color: #0c4a6e; /* Darker blue text */
+        }
+        .callout strong {
+            color: #0284c7; /* Stronger blue */
+        }
+        .warning {
+            background-color: #fef2f2; /* Light red */
+            border-left: 5px solid #ef4444; /* Red border */
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            color: #7f1d1d; /* Darker red text */
+        }
+        .warning strong {
+            color: #dc2626; /* Stronger red */
+        }
+        ul {
+            list-style-type: disc;
+            margin-left: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        li {
+            margin-bottom: 0.5rem;
+        }
+        b {
+            color: #4338ca; /* Indigo 700 */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 Git + GitHub CLI Crash Course</h1>
+        <p class="text-center text-lg text-gray-700 mb-8">Your essential guide to mastering Git and GitHub CLI for daily development workflows.</p>
+
+        <hr class="section-separator">
+
+        <h2>🔹 1. Setup</h2>
+        <p>Before you dive in, ensure Git and GitHub CLI are installed and configured.</p>
+        <pre><code>git --version          <span class="comment"># Check Git version</span>
+gh --version           <span class="comment"># Check GitHub CLI version</span>
+gh auth login          <span class="comment"># Login to GitHub (follow prompts)</span>
+
+<span class="comment"># Configure your identity (required for commits):</span>
+git config --global user.name "Your Name"
+git config --global user.email "you@example.com"</code></pre>
+
+        <hr class="section-separator">
+
+        <h2>🔹 2. Starting a Repository</h2>
+        <p>Learn how to initialize a new Git repository locally or directly on GitHub.</p>
+        <h3>Create a repo locally:</h3>
+        <pre><code>git init               <span class="comment"># Initializes a new Git repository in the current directory</span>
+git add .              <span class="comment"># Stages all changes in the current directory</span>
+git commit -m "Initial commit" <span class="comment"># Commits the staged changes with a message</span></code></pre>
+        <h3>Create repo on GitHub directly from CLI:</h3>
+        <pre><code>gh repo create my-repo-name --public --source=. --remote=origin --push
+<span class="comment"># This command does three things:</span>
+<span class="comment"># 1. Creates a new public repository on GitHub named 'my-repo-name'.</span>
+<span class="comment"># 2. Links your local repository to this new GitHub repo (sets 'origin' remote).</span>
+<span class="comment"># 3. Pushes your current local branch to the 'main' branch on GitHub.</span></code></pre>
+        <div class="callout">
+            <p>👉 <strong>Tip:</strong> This is a powerful command that streamlines the process of getting your local project onto GitHub!</p>
+        </div>
+
+        <hr class="section-separator">
+
+        <h2>🔹 3. Daily Git Workflow</h2>
+        <p>The core commands you'll use every day for managing your code.</p>
+        <h3>Stage → Commit → Push:</h3>
+        <pre><code>git status              <span class="comment"># Shows modified, staged, and untracked files</span>
+git add file.py         <span class="comment"># Stages specific file(s) for the next commit</span>
+git add .               <span class="comment"># Stages all changes in the current directory (new, modified, deleted)</span>
+git commit -m "Message" <span class="comment"># Records staged changes to the repository with a descriptive message</span>
+git push origin main    <span class="comment"># Uploads local commits to the remote repository's 'main' branch</span></code></pre>
+        <h3>Pull changes from GitHub:</h3>
+        <pre><code>git pull origin main    <span class="comment"># Fetches changes from the 'main' branch of the 'origin' remote and merges them into your current branch</span></code></pre>
+
+        <hr class="section-separator">
+
+        <h2>🔹 4. Branching (Very Important)</h2>
+        <p>Branches allow you to work on new features or bug fixes in isolation.</p>
+        <pre><code>git branch              <span class="comment"># Lists all local branches, highlighting the current one</span>
+git checkout -b feature-login   <span class="comment"># Creates a new branch named 'feature-login' and switches to it</span>
+git checkout main                <span class="comment"># Switches to the 'main' branch</span>
+git merge feature-login          <span class="comment"># Integrates changes from 'feature-login' into the current branch (e.g., 'main')</span>
+git branch -d feature-login      <span class="comment"># Deletes the local branch 'feature-login' (only after it's merged)</span></code></pre>
+        <h3>With GitHub CLI for Pull Requests:</h3>
+        <pre><code>gh pr create   <span class="comment"># Interactively creates a new pull request on GitHub</span>
+gh pr status   <span class="comment"># Shows the status of your current pull requests</span>
+gh pr merge    <span class="comment"># Merges a pull request directly from the CLI</span></code></pre>
+
+        <hr class="section-separator">
+
+        <h2>🔹 5. Seeing History</h2>
+        <p>Explore the commit history of your repository.</p>
+        <pre><code>git log                  <span class="comment"># Displays a detailed log of all commits</span>
+git log --oneline        <span class="comment"># Shows a concise, single-line summary of each commit</span>
+git log --graph --oneline --all   <span class="comment"># Visualizes the commit history as a graph, including all branches</span></code></pre>
+
+        <hr class="section-separator">
+
+        <h2>🔹 6. Switching to a Previous Version</h2>
+        <p>How to navigate through your project's history safely.</p>
+        <h3>Checkout a commit temporarily:</h3>
+        <pre><code>git checkout &lt;commit-id&gt; <span class="comment"># Switches to a specific commit. This puts you in a "detached HEAD" state.</span></code></pre>
+        <h3>Reset branch to an old commit (⚠️ Destructive):</h3>
+        <pre><code class="warning">git reset --hard &lt;commit-id&gt; <span class="comment"># WARNING: This rewrites history and discards all changes after the specified commit. Use with extreme caution!</span></code></pre>
+        <h3>Create a new branch from old commit (Safe way!):</h3>
+        <pre><code>git checkout -b old-version &lt;commit-id&gt; <span class="comment"># Creates a new branch named 'old-version' starting from the specified commit-id.</span>
+<span class="comment"># This allows you to explore previous states without affecting your main branches.</span></code></pre>
+        <div class="callout">
+            <p>👉 <strong>Tip:</strong> Always prefer creating a new branch when you want to look at or work from an old commit, as `git reset --hard` is destructive.</p>
+        </div>
+
+        <hr class="section-separator">
+
+        <h2>🔹 7. Undoing Changes</h2>
+        <p>Commands to revert or modify unwanted changes.</p>
+        <h3>Undo changes in a file (before staging):</h3>
+        <pre><code>git checkout -- file.py <span class="comment"># Discards unstaged changes in 'file.py', reverting it to the last committed state.</span></code></pre>
+        <h3>Unstage a file:</h3>
+        <pre><code>git reset file.py       <span class="comment"># Removes 'file.py' from the staging area, keeping its changes in your working directory.</span></code></pre>
+        <h3>Amend last commit (fix typo, etc.):</h3>
+        <pre><code>git commit --amend -m "New message" <span class="comment"># Combines staged changes with the previous commit and allows you to change its message.</span>
+<span class="comment"># Useful for fixing small issues without creating a new commit.</span></code></pre>
+
+        <hr class="section-separator">
+
+        <h2>🔹 8. GitHub CLI Superpowers</h2>
+        <p>Leverage the GitHub CLI for common repository interactions.</p>
+        <ul>
+            <li><b>Clone repo:</b>
+                <pre><code>gh repo clone owner/repo <span class="comment"># Clones a repository from GitHub to your local machine.</span></code></pre>
+            </li>
+            <li><b>View repo in browser:</b>
+                <pre><code>gh repo view --web <span class="comment"># Opens the current repository's page in your default web browser.</span></code></pre>
+            </li>
+            <li><b>List issues:</b>
+                <pre><code>gh issue list <span class="comment"># Lists open issues in the current repository.</span></code></pre>
+            </li>
+            <li><b>Create issue:</b>
+                <pre><code>gh issue create <span class="comment"># Interactively creates a new issue.</span></code></pre>
+            </li>
+            <li><b>List pull requests:</b>
+                <pre><code>gh pr list <span class="comment"># Lists open pull requests in the current repository.</span></code></pre>
+            </li>
+        </ul>
+
+        <hr class="section-separator">
+
+        <h2>🔹 9. Tags (for Versions / Releases)</h2>
+        <p>Mark specific points in your history, usually for releases.</p>
+        <pre><code>git tag v1.0             <span class="comment"># Creates a lightweight tag named 'v1.0' at the current commit.</span>
+git push origin v1.0     <span class="comment"># Pushes the tag 'v1.0' to the 'origin' remote.</span></code></pre>
+        <h3>With GitHub CLI (Release Management):</h3>
+        <pre><code>gh release create v1.0 --notes "First stable release" <span class="comment"># Creates a new GitHub release associated with tag 'v1.0'.</span>
+gh release list        <span class="comment"># Lists releases in the current repository.</span></code></pre>
+
+        <hr class="section-separator">
+
+        <h2>🔹 10. Cheat Sheet (Most Used)</h2>
+        <p>A quick reference for the most frequently used commands.</p>
+        <h3>✅ Start:</h3>
+        <pre><code>git init
+gh repo create</code></pre>
+        <h3>✅ Work:</h3>
+        <pre><code>git add .
+git commit -m "Message"
+git push origin main</code></pre>
+        <h3>✅ History & Switch:</h3>
+        <pre><code>git log --oneline
+git checkout &lt;commit-id&gt;</code></pre>
+        <h3>✅ Branches:</h3>
+        <pre><code>git checkout -b feature
+git push -u origin feature
+gh pr create</code></pre>
+        <h3>✅ Undo:</h3>
+        <pre><code>git reset HEAD~1     <span class="comment"># Undoes the last commit, moving changes to staging area.</span>
+git checkout -- file <span class="comment"># Discards local changes to a file.</span></code></pre>
+        <p class="text-center text-xl font-semibold mt-8 text-purple-700">⚡ That’s the 90% of Git + GitHub CLI you’ll use daily.</p>
+    </div>
+</body>
+</html>
