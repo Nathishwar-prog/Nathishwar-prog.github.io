@@ -1,73 +1,67 @@
-# Welcome to your Lovable project
+<h1 align="center">
+  <br>
+  <a href="http://gregsithole.com">
+  <img src="./src/assets/light-logo.svg" alt="GregSithole" width="200"></a>
+  <br>
+  Greg Sithole's Personal Website
+  <br>
+</h1>
 
-## Project info
+<h4 align="center">A simple personal website about <a href="http://gregsithole.com" target="_blank">Greg Sithole</a>.</h4>
 
-**URL**: https://lovable.dev/projects/bd9e094d-ab27-452f-868e-d8b13a425609
+<br>
 
-## How can I edit this code?
+![screenshot](https://github.com/GregSithole/gregsithole-react-portfolio/raw/master/src/assets/screenshot.png)
 
-There are several ways of editing your application.
+## How To Use
 
-**Use Lovable**
+To clone and run this application, you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/). From your command line:
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/bd9e094d-ab27-452f-868e-d8b13a425609) and start prompting.
+```bash
+# Clone this repository
+$ git clone https://github.com/GregSithole/gregsithole-react-portfolio
 
-Changes made via Lovable will be committed automatically to this repo.
+# Go into the repository
+$ cd gregsithole-react-portfolio
 
-**Use your preferred IDE**
+# Install dependencies
+$ yarn install
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+# Run the app
+$ yarn start
 ```
 
-**Edit a file directly in GitHub**
+<!-- ## Credits
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+This website uses the following open source packages:
 
-**Use GitHub Codespaces**
+- [Node.js](https://nodejs.org/)
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Related
 
-## What technologies are used for this project?
+[markdownify-web](https://github.com/amitmerchant1990/markdownify-web) - Web version of Markdownify
 
-This project is built with:
+## Support -->
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+<!-- <a href="https://www.buymeacoffee.com/5Zn8Xh3l9" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/purple_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a> -->
 
-## How can I deploy this project?
+<!-- <p>Or</p>
 
-Simply open [Lovable](https://lovable.dev/projects/bd9e094d-ab27-452f-868e-d8b13a425609) and click on Share -> Publish.
+<a href="https://www.patreon.com/amitmerchant">
+	<img src="https://c5.patreon.com/external/logo/become_a_patron_button@2x.png" width="160">
+</a> -->
 
-## Can I connect a custom domain to my Lovable project?
+<!-- ## You may also like...
 
-Yes, you can!
+- [Pomolectron](https://github.com/amitmerchant1990/pomolectron) - A pomodoro app
+- [Correo](https://github.com/amitmerchant1990/correo) - A menubar/taskbar Gmail App for Windows and macOS
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## License
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+MIT
+
+---
+
+> [amitmerchant.com](https://www.amitmerchant.com) &nbsp;&middot;&nbsp;
+> GitHub [@amitmerchant1990](https://github.com/amitmerchant1990) &nbsp;&middot;&nbsp;
+> Twitter [@amit_merchant](https://twitter.com/amit_merchant) -->
